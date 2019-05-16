@@ -9,4 +9,5 @@ module.exports = app => {
 
   const { account } = controller.api;
   apiV1Router.post('/register', account.register);
+  apiV1Router.post('/login', account.login);
 };

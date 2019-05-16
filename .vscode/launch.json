@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Egg Debug",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "debug", "--", "--inspect-brk"],
+      "runtimeArgs": ["run", "debug"],
       "console": "integratedTerminal",
       "restart": true,
       "protocol": "auto",

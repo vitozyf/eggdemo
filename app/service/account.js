@@ -11,6 +11,22 @@ class UserServer extends Service {
     return this.ctx.model.Account.create(accountInfo);
   }
   /**
+   * 根据账号名查找账号(不含密码)
+   * @param {string} user_name  账号名
+   */
+  async getUserByUserNameWithoutPwd(user_name) {
+    if (!user_name || user_name.length === 0) {
+      return null;
+    }
+
+    return this.ctx.model.Account.findOne({
+      where: { user_name },
+      attributes: {
+        exclude: ['password'],
+      },
+    });
+  }
+  /**
    * 根据账号名查找账号
    * @param {string} user_name  账号名
    */
@@ -21,9 +37,6 @@ class UserServer extends Service {
 
     return this.ctx.model.Account.findOne({
       where: { user_name },
-      attributes: {
-        exclude: ['Pwd'],
-      },
     });
   }
 }
