@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
   eggdemo:
-    image: eggdemo
+    image: vitozhang/eggdemo:0.0.1
     build: .
     environment:
       NODE_ENV: production
